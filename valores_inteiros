@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    double a, b;
+
+    printf("Digite os valores de a e b: ");
+    scanf("%lf %lf", &a, &b);
+
+    if (a > b) {
+        printf("O valor de a é maior que b\n");
+    } else {
+        printf("O valor de a é menor ou igual a b\n");
+    }
+
+    return 0;
+}
