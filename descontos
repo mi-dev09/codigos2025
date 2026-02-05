@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    double preco, total;
+    int quantidade;
+
+    printf("Digite o preco do produto: ");
+    scanf("%lf", &preco);
+
+    printf("Digite a quantidade de produtos: ");
+    scanf("%d", &quantidade);
+
+    if (quantidade < 0) {
+        printf("Erro: quantidade negativa.\n");
+    } else {
+        total = preco * quantidade;
+
+        if (quantidade >= 3 && quantidade <= 4) {
+            total *= 0.90; 
+        } else if (quantidade >= 5 && quantidade <= 10) {
+            total *= 0.85; 
+        } else if (quantidade > 10) {
+            total *= 0.80; 
+        }
+
+        printf("Valor total da compra: R$ %.2f\n", total);
+    }
+
+    return 0;
+}
