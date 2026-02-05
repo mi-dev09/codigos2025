@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    double L, R, altura, largura;
+    double areaParede, litrosNecessarios, valorDoLitro;
+
+    printf("Valor de L: ");
+    scanf("%lf", &L);
+
+    printf("Valor da lata: ");
+    scanf("%lf", &R);
+
+    printf("Altura e largura da parede: ");
+    scanf("%lf %lf", &altura, &largura);
+
+    double areaParede = altura * largura;
+    double litrosNecessarios = (areaParede / 5) * 2; 
+    double valorDoLitro = R / L;
+
+    printf("%f litros de tinta para pintar a parede (com 2 demãos).\n", litrosNecessarios);
+    printf("Esta quantidade custa R$ %.2f.\n", litrosNecessarios * valorDoLitro);
+
+    return 0;
+}
