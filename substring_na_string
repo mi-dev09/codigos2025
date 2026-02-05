@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int contaOcorrencias(char str[], char sub[]) {
+    int count = 0;
+    int lenStr = strlen(str);
+    int lenSub = strlen(sub);
+
+    for (int i = 0; i <= lenStr - lenSub; i++) {
+        int igual = 1;
+
+        for (int j = 0; j < lenSub; j++) {
+            if (tolower(str[i + j]) != tolower(sub[j])) {
+                igual = 0;
+                break;
+            }
+        }
+
+        if (igual) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    char str[101];
+    char sub[101];
+
+    printf("Digite a string (max 100 chars): ");
+    fgets(str, 101, stdin);
+    str[strcspn(str, "\n")] = '\0';
+
+    printf("Digite a substring (max 100 chars): ");
+    fgets(sub, 101, stdin);
+    sub[strcspn(sub, "\n")] = '\0';
+
+    int ocorrencias = contaOcorrencias(str, sub);
+
+    printf("\nString: %s\n", str);
+    printf("Substring: %s\n", sub);
+    printf("Quantidade de ocorrencias: %d\n", ocorrencias);
+
+    return 0;
+}
