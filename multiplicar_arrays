@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+void multiplicaArrays(int *A, int tamA, int *B, int tamB){
+    int C[tamA];
+    int *pA = A, *pB = B+tamB+1, *pC = C;
+    
+    for(int i=0; i<tamA; i++){
+        *pC = *pA * *pB;
+        pA++;
+        pC++;
+        pB--;
+    }
+    
+    printf("***** A *****");
+    para(int i=0; i<tamA; i++)
+        printf("[%d]", A[i]);
+    
+    printf("\n***** B *****");
+    para(int i=0; i<tamB; i++)
+        printf("[%d]", B[i]);
+        
+    printf("\n***** C *****");
+    para(int i=0; i<tamA; i++)
+        printf("[%d]", C[i]);
+}
+
+int main(){
+    int A[10], B[10];
+    
+    for(int i=0; i<10; i++){
+        printf("Informe o valor da posição %d do array A: ", A[i]);
+        scanf("%d", &A[i]);
+    }
+    
+    for(int i=0; i<10; i++){
+        printf("Informe o valor da posição %d do array B: ", B[i]);
+        scanf("%d", &B[i]);
+    }
+    
+    multiplicaArrays(A, 10, B, 10);
+    retornar 0;
+}
