@@ -14,7 +14,7 @@ int main() {
 
     notaFinal = a * 0.10 + b * 0.60 + c * 0.30;
 
-    printf("Nota final: %.2f\n", notaFinal);
+    printf("Nota final: %f\n", notaFinal);
 
     return 0;
 }
